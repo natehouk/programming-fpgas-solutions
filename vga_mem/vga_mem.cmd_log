@@ -1,0 +1,26 @@
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.syr" 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/vga_mem_elbert.ucf -p xc3s50a-tq144-4 vga_mem.ngc vga_mem.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o vga_mem_map.ncd vga_mem.ngd vga_mem.pcf 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/vga_mem_elbert.ucf -p xc3s50a-tq144-4 vga_mem.ngc vga_mem.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o vga_mem_map.ncd vga_mem.ngd vga_mem.pcf 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/vga_mem_elbert.ucf -p xc3s50a-tq144-4 vga_mem.ngc vga_mem.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o vga_mem_map.ncd vga_mem.ngd vga_mem.pcf 
+par -w -intstyle ise -ol high -t 1 vga_mem_map.ncd vga_mem.ncd vga_mem.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_mem.twx vga_mem.ncd -o vga_mem.twr vga_mem.pcf 
+bitgen -intstyle ise -f vga_mem.ut vga_mem.ncd 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/vga_mem_elbert.ucf -p xc3s50a-tq144-4 vga_mem.ngc vga_mem.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o vga_mem_map.ncd vga_mem.ngd vga_mem.pcf 
+par -w -intstyle ise -ol high -t 1 vga_mem_map.ncd vga_mem.ncd vga_mem.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_mem.twx vga_mem.ncd -o vga_mem.twr vga_mem.pcf 
+bitgen -intstyle ise -f vga_mem.ut vga_mem.ncd 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.syr" 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/vga_mem/vga_mem.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/vga_mem_elbert.ucf -p xc3s50a-tq144-4 vga_mem.ngc vga_mem.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o vga_mem_map.ncd vga_mem.ngd vga_mem.pcf 
+par -w -intstyle ise -ol high -t 1 vga_mem_map.ncd vga_mem.ncd vga_mem.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_mem.twx vga_mem.ncd -o vga_mem.twr vga_mem.pcf 
+bitgen -intstyle ise -f vga_mem.ut vga_mem.ncd 

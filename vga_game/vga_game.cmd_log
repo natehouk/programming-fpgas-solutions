@@ -1,0 +1,12 @@
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/vga_game/vga_game.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/vga_game/vga_game.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50a-tq144-4 vga_game.ngc vga_game.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o vga_game_map.ncd vga_game.ngd vga_game.pcf 
+par -w -intstyle ise -ol high -t 1 vga_game_map.ncd vga_game.ncd vga_game.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_game.twx vga_game.ncd -o vga_game.twr vga_game.pcf 
+bitgen -intstyle ise -f vga_game.ut vga_game.ncd 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/vga_game/vga_game.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/vga_game/vga_game.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/vga_game_elbert.ucf -p xc3s50a-tq144-4 vga_game.ngc vga_game.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o vga_game_map.ncd vga_game.ngd vga_game.pcf 
+par -w -intstyle ise -ol high -t 1 vga_game_map.ncd vga_game.ncd vga_game.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_game.twx vga_game.ncd -o vga_game.twr vga_game.pcf 
+bitgen -intstyle ise -f vga_game.ut vga_game.ncd 

@@ -1,0 +1,2 @@
+MO vga NULL src/vga.v vlg6A/vga.bin 1609617215
+MO vga_mem NULL src/vga_mem.v vlg38/vga__mem.bin 1609617215
