@@ -1,0 +1,18 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sat Jan 02 16:02:33 2021
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "RED<0>" LOCATE = SITE "P103" LEVEL 1;
+COMP "HS" LOCATE = SITE "P93" LEVEL 1;
+COMP "RED<1>" LOCATE = SITE "P104" LEVEL 1;
+COMP "RED<2>" LOCATE = SITE "P105" LEVEL 1;
+COMP "VS" LOCATE = SITE "P92" LEVEL 1;
+COMP "BLUE<0>" LOCATE = SITE "P96" LEVEL 1;
+COMP "BLUE<1>" LOCATE = SITE "P98" LEVEL 1;
+COMP "GREEN<0>" LOCATE = SITE "P99" LEVEL 1;
+COMP "GREEN<1>" LOCATE = SITE "P101" LEVEL 1;
+COMP "GREEN<2>" LOCATE = SITE "P102" LEVEL 1;
+COMP "CLK" LOCATE = SITE "P129" LEVEL 1;
+SCHEMATIC END;
+

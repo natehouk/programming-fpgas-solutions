@@ -1,0 +1,2 @@
+verilog work "src/vga.v"
+verilog work "src/vga_basic.v"
