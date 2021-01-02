@@ -34,7 +34,7 @@ reg [7:0] mem[4799:0]; // 80 x 60 (8x8 pixels on 640x480)
 wire [12:0] mem_index;
 wire [7:0] color;
 
-initial begin
+initial begin                                
   $readmemh("flag.txt", mem);
 end
 
