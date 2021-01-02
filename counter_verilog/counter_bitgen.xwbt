@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/natehouk/src/programming-fpgas-solutions/counter_verilog/counter.ncd
+OUTFILE=/home/natehouk/src/programming-fpgas-solutions/counter_verilog/counter.bit
+FAMILY=Spartan3A and Spartan3AN
+PART=xc3s50a-4tq144
+WORKINGDIR=/home/natehouk/src/programming-fpgas-solutions/counter_verilog
+LICENSE=WebPack
+USER_INFO=211859005_0_0_737

@@ -1,0 +1,32 @@
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/decoder_7_seg/seg_test.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/decoder_7_seg/seg_test.syr" 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/decoder_7_seg/seg_test.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/decoder_7_seg/seg_test.syr" 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/decoder_7_seg/seg_test.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/decoder_7_seg/seg_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seg_test_elbert.ucf -p xc3s50a-tq144-4 seg_test.ngc seg_test.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seg_test_elbert.ucf -p xc3s50a-tq144-4 seg_test.ngc seg_test.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o seg_test_map.ncd seg_test.ngd seg_test.pcf 
+par -w -intstyle ise -ol high -t 1 seg_test_map.ncd seg_test.ncd seg_test.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seg_test.twx seg_test.ncd -o seg_test.twr seg_test.pcf -ucf seg_test_elbert.ucf 
+bitgen -intstyle ise -f seg_test.ut seg_test.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seg_test_elbert.ucf -p xc3s50a-tq144-4 seg_test.ngc seg_test.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o seg_test_map.ncd seg_test.ngd seg_test.pcf 
+par -w -intstyle ise -ol high -t 1 seg_test_map.ncd seg_test.ncd seg_test.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seg_test.twx seg_test.ncd -o seg_test.twr seg_test.pcf -ucf seg_test_elbert.ucf 
+bitgen -intstyle ise -f seg_test.ut seg_test.ncd 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/decoder_7_seg/seg_test.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/decoder_7_seg/seg_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seg_test_elbert.ucf -p xc3s50a-tq144-4 seg_test.ngc seg_test.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o seg_test_map.ncd seg_test.ngd seg_test.pcf 
+par -w -intstyle ise -ol high -t 1 seg_test_map.ncd seg_test.ncd seg_test.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seg_test.twx seg_test.ncd -o seg_test.twr seg_test.pcf -ucf seg_test_elbert.ucf 
+bitgen -intstyle ise -f seg_test.ut seg_test.ncd 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/decoder_7_seg/seg_test.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/decoder_7_seg/seg_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seg_test_elbert.ucf -p xc3s50a-tq144-4 seg_test.ngc seg_test.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o seg_test_map.ncd seg_test.ngd seg_test.pcf 
+par -w -intstyle ise -ol high -t 1 seg_test_map.ncd seg_test.ncd seg_test.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seg_test.twx seg_test.ncd -o seg_test.twr seg_test.pcf -ucf seg_test_elbert.ucf 
+bitgen -intstyle ise -f seg_test.ut seg_test.ncd 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/decoder_7_seg/seg_test.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/decoder_7_seg/seg_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc seg_test_elbert.ucf -p xc3s50a-tq144-4 seg_test.ngc seg_test.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o seg_test_map.ncd seg_test.ngd seg_test.pcf 
+par -w -intstyle ise -ol high -t 1 seg_test_map.ncd seg_test.ncd seg_test.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml seg_test.twx seg_test.ncd -o seg_test.twr seg_test.pcf -ucf seg_test_elbert.ucf 
+bitgen -intstyle ise -f seg_test.ut seg_test.ncd 

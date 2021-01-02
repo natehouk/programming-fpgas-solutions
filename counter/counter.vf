@@ -1,0 +1,68 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : counter.vf
+// /___/   /\     Timestamp : 01/02/2021 11:40:54
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan3a -verilog /home/natehouk/src/counter/counter.vf -w /home/natehouk/src/counter/src/counter.sch
+//Design Name: counter
+//Device: spartan3a
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module counter(CLK, 
+               QA, 
+               QB, 
+               QC, 
+               QD);
+
+    input CLK;
+   output QA;
+   output QB;
+   output QC;
+   output QD;
+   
+   wire XLXN_3;
+   wire XLXN_6;
+   wire XLXN_9;
+   wire XLXN_13;
+   wire QA_DUMMY;
+   wire QB_DUMMY;
+   wire QC_DUMMY;
+   wire QD_DUMMY;
+   
+   assign QA = QA_DUMMY;
+   assign QB = QB_DUMMY;
+   assign QC = QC_DUMMY;
+   assign QD = QD_DUMMY;
+   FD #( .INIT(1'b0) ) XLXI_1 (.C(CLK), 
+              .D(XLXN_3), 
+              .Q(QA_DUMMY));
+   FD #( .INIT(1'b0) ) XLXI_2 (.C(XLXN_3), 
+              .D(XLXN_6), 
+              .Q(QB_DUMMY));
+   FD #( .INIT(1'b0) ) XLXI_3 (.C(XLXN_6), 
+              .D(XLXN_9), 
+              .Q(QC_DUMMY));
+   FD #( .INIT(1'b0) ) XLXI_4 (.C(XLXN_9), 
+              .D(XLXN_13), 
+              .Q(QD_DUMMY));
+   INV  XLXI_5 (.I(QA_DUMMY), 
+               .O(XLXN_3));
+   INV  XLXI_6 (.I(QB_DUMMY), 
+               .O(XLXN_6));
+   INV  XLXI_7 (.I(QC_DUMMY), 
+               .O(XLXN_9));
+   INV  XLXI_8 (.I(QD_DUMMY), 
+               .O(XLXN_13));
+endmodule
