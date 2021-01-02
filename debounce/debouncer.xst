@@ -1,0 +1,5 @@
+set -tmpdir "/home/natehouk/src/programming-fpgas-solutions/debounce/xst/projnav.tmp"
+set -xsthdpdir "/home/natehouk/src/programming-fpgas-solutions/debounce/xst"
+elaborate
+-ifn debouncer.prj
+-ifmt mixed

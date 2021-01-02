@@ -1,0 +1,4 @@
+MO display_7_seg NULL src/display_7_seg.v vlg7E/display__7__seg.bin 1609597731
+MO counter_7_seg NULL src/counter_7_seg.v vlg00/counter__7__seg.bin 1609597731
+MO debouncer NULL src/debouncer.v vlg03/debouncer.bin 1609597731
+MO decoder_7_seg NULL src/decoder_7_seg.v vlg02/decoder__7__seg.bin 1609597731

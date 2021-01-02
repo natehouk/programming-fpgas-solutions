@@ -1,0 +1,4 @@
+verilog work "src/decoder_7_seg.v"
+verilog work "src/display_7_seg.v"
+verilog work "src/debouncer.v"
+verilog work "src/counter_7_seg.v"

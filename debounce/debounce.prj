@@ -1,0 +1,2 @@
+verilog work "src/debouncer.v"
+verilog work "src/debounce.v"
