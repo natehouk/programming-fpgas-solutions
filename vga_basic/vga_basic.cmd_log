@@ -4,3 +4,8 @@ map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o vga_basi
 par -w -intstyle ise -ol high -t 1 vga_basic_map.ncd vga_basic.ncd vga_basic.pcf 
 trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_basic.twx vga_basic.ncd -o vga_basic.twr vga_basic.pcf 
 bitgen -intstyle ise -f vga_basic.ut vga_basic.ncd 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/vga_basic/vga_basic.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/vga_basic/vga_basic.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/vga_basic_elbert.ucf -p xc3s50a-tq144-4 vga_basic.ngc vga_basic.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o vga_basic_map.ncd vga_basic.ngd vga_basic.pcf 
+par -w -intstyle ise -ol high -t 1 vga_basic_map.ncd vga_basic.ncd vga_basic.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml vga_basic.twx vga_basic.ncd -o vga_basic.twr vga_basic.pcf 

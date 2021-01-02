@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-panda::  Sat Jan 02 16:02:35 2021
+panda::  Sat Jan 02 16:23:03 2021
 
 par -w -intstyle ise -ol high -t 1 vga_basic_map.ncd vga_basic.ncd
 vga_basic.pcf 
