@@ -1,0 +1,12 @@
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/alarm/alarm.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/alarm/alarm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s50a-tq144-4 alarm.ngc alarm.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o alarm_map.ncd alarm.ngd alarm.pcf 
+par -w -intstyle ise -ol high -t 1 alarm_map.ncd alarm.ncd alarm.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alarm.twx alarm.ncd -o alarm.twr alarm.pcf 
+bitgen -intstyle ise -f alarm.ut alarm.ncd 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/alarm/alarm.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/alarm/alarm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/alarm_elbert.ucf -p xc3s50a-tq144-4 alarm.ngc alarm.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o alarm_map.ncd alarm.ngd alarm.pcf 
+par -w -intstyle ise -ol high -t 1 alarm_map.ncd alarm.ncd alarm.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alarm.twx alarm.ncd -o alarm.twr alarm.pcf 
+bitgen -intstyle ise -f alarm.ut alarm.ncd 

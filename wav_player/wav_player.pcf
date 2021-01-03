@@ -1,0 +1,10 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sun Jan 03 12:16:36 2021
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "switch_play" LOCATE = SITE "P80" LEVEL 1;
+COMP "audio_out" LOCATE = SITE "P88" LEVEL 1;
+COMP "CLK" LOCATE = SITE "P129" LEVEL 1;
+SCHEMATIC END;
+

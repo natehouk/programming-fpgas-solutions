@@ -35,7 +35,7 @@ wire [12:0] mem_index;
 wire [7:0] color;
 
 initial begin                                
-  $readmemh("flag.txt", mem);
+  $readmemh("image.txt", mem);
 end
 
 vga v(.CLK (CLK), .HS (HS), .VS (VS), .x (cx), .y (y), .blank (blank));

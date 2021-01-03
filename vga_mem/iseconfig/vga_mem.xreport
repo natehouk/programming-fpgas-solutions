@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2021-01-02T20:47:26</DateModified>
+  <DateModified>2021-01-03T12:14:01</DateModified>
   <ModuleName>vga_mem</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/natehouk/src/programming-fpgas-solutions/vga_mem/iseconfig/vga_mem.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/natehouk/src/programming-fpgas-solutions/vga_mem</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/natehouk/src/programming-fpgas-solutions/vga_mem/</ImplementationReportsDirectory>
   <DateInitialized>2021-01-02T20:32:15</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

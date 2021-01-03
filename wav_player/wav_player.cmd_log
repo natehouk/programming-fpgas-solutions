@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/wav_player/wav_player.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/wav_player/wav_player.syr" 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/wav_player/wav_player.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/wav_player/wav_player.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/wav_player_elbert.ucf -p xc3s50a-tq144-4 wav_player.ngc wav_player.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o wav_player_map.ncd wav_player.ngd wav_player.pcf 
+par -w -intstyle ise -ol high -t 1 wav_player_map.ncd wav_player.ncd wav_player.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml wav_player.twx wav_player.ncd -o wav_player.twr wav_player.pcf 
+bitgen -intstyle ise -f wav_player.ut wav_player.ncd 

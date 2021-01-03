@@ -1,0 +1,461 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: wav_player.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "wav_player.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "wav_player"
+Output Format                      : NGC
+Target Device                      : xc3s50a-4-tq144
+
+---- Source Options
+Top Module Name                    : wav_player
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "src/debouncer.v" in library work
+Compiling verilog file "src/wav_player.v" in library work
+Module <debouncer> compiled
+Module <wav_player> compiled
+No errors in compilation
+Analysis of file <"wav_player.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <wav_player> in library <work> with parameters.
+	MEM_SIZE = "00000000000000000000111100111101"
+
+Analyzing hierarchy for module <debouncer> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <wav_player>.
+	MEM_SIZE = 32'sb00000000000000000000111100111101
+INFO:Xst:2546 - "src/wav_player.v" line 32: reading initialization file "audio.txt".
+INFO:Xst:1433 - Contents of array <memory> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Module <wav_player> is correct for synthesis.
+ 
+Analyzing module <debouncer> in library <work>.
+Module <debouncer> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <debouncer>.
+    Related source file is "src/debouncer.v".
+    Found 1-bit register for signal <state>.
+    Found 17-bit up counter for signal <count>.
+    Found 1-bit xor2 for signal <idle$xor0000> created at line 44.
+    Found 1-bit register for signal <sync_0>.
+    Found 1-bit register for signal <sync_1>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   3 D-type flip-flop(s).
+Unit <debouncer> synthesized.
+
+
+Synthesizing Unit <wav_player>.
+    Related source file is "src/wav_player.v".
+WARNING:Xst:1781 - Signal <memory> is used but never assigned. Tied to default value.
+    Found 3901x8-bit ROM for signal <$varindex0000> created at line 53.
+    Found 1-bit register for signal <audio_out>.
+    Found 20-bit up counter for signal <address>.
+    Found 8-bit comparator greater for signal <audio_out$cmp_gt0000> created at line 54.
+    Found 8-bit up counter for signal <counter>.
+    Found 1-bit register for signal <play>.
+    Found 4-bit up counter for signal <prescaler>.
+    Found 8-bit register for signal <value>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   3 Counter(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <wav_player> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 3901x8-bit ROM                                        : 1
+# Counters                                             : 4
+ 17-bit up counter                                     : 1
+ 20-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+ 8-bit up counter                                      : 1
+# Registers                                            : 6
+ 1-bit register                                        : 5
+ 8-bit register                                        : 1
+# Comparators                                          : 1
+ 8-bit comparator greater                              : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <wav_player>.
+INFO:Xst:3044 - The ROM <Mrom__varindex0000> will be implemented as a read-only BLOCK RAM, absorbing the register: <value>.
+INFO:Xst:3225 - The RAM <Mrom__varindex0000> will be implemented as BLOCK RAM
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 3901-word x 8-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <CLK>           | rise     |
+    |     enA            | connected to signal <counter_not0001> | high     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <value>         |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <wav_player> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 3901x8-bit single-port block RAM                      : 1
+# Counters                                             : 4
+ 17-bit up counter                                     : 1
+ 20-bit up counter                                     : 1
+ 4-bit up counter                                      : 1
+ 8-bit up counter                                      : 1
+# Registers                                            : 5
+ Flip-Flops                                            : 5
+# Comparators                                          : 1
+ 8-bit comparator greater                              : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <wav_player> ...
+
+Optimizing unit <debouncer> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block wav_player, actual ratio is 5.
+
+Final Macro Processing ...
+
+Processing Unit <wav_player> :
+	Found 2-bit shift register for signal <d1/sync_1>.
+Unit <wav_player> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 52
+ Flip-Flops                                            : 52
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : wav_player.ngr
+Top Level Output File Name         : wav_player
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 3
+
+Cell Usage :
+# BELS                             : 187
+#      GND                         : 1
+#      INV                         : 7
+#      LUT1                        : 43
+#      LUT2                        : 10
+#      LUT2_L                      : 1
+#      LUT3                        : 5
+#      LUT4                        : 11
+#      LUT4_D                      : 2
+#      MUXCY                       : 61
+#      VCC                         : 1
+#      XORCY                       : 45
+# FlipFlops/Latches                : 53
+#      FD                          : 1
+#      FDE                         : 10
+#      FDR                         : 17
+#      FDRE                        : 24
+#      FDSE                        : 1
+# RAMS                             : 2
+#      RAMB16BWE                   : 2
+# Shift Registers                  : 1
+#      SRL16                       : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 2
+#      IBUF                        : 1
+#      OBUF                        : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s50atq144-4 
+
+ Number of Slices:                       41  out of    704     5%  
+ Number of Slice Flip Flops:             53  out of   1408     3%  
+ Number of 4 input LUTs:                 80  out of   1408     5%  
+    Number used as logic:                79
+    Number used as Shift registers:       1
+ Number of IOs:                           3
+ Number of bonded IOBs:                   3  out of    108     2%  
+ Number of BRAMs:                         2  out of      3    66%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK                                | BUFGP                  | 56    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 8.227ns (Maximum Frequency: 121.551MHz)
+   Minimum input arrival time before clock: 1.269ns
+   Maximum output required time after clock: 5.531ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 8.227ns (frequency: 121.551MHz)
+  Total number of paths / destination ports: 1563 / 155
+-------------------------------------------------------------------------
+Delay:               8.227ns (Levels of Logic = 5)
+  Source:            prescaler_1 (FF)
+  Destination:       address_0 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: prescaler_1 to address_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.591   0.730  prescaler_1 (prescaler_1)
+     LUT2_L:I0->LO         1   0.648   0.103  address_and000011_SW0 (N01)
+     LUT4:I3->O           17   0.648   1.083  address_and000011 (counter_not0001)
+     LUT3:I2->O            1   0.648   0.423  address_and0000118 (address_not0001)
+     LUT4:I3->O            1   0.648   0.000  address_and0000_wg_lut<5> (address_and0000_wg_lut<5>)
+     MUXCY:S->O           21   0.708   1.128  address_and0000_wg_cy<5> (address_and0000)
+     FDRE:R                    0.869          address_0
+    ----------------------------------------
+    Total                      8.227ns (4.760ns logic, 3.467ns route)
+                                       (57.9% logic, 42.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.269ns (Levels of Logic = 1)
+  Source:            switch_play (PAD)
+  Destination:       d1/Mshreg_sync_1 (FF)
+  Destination Clock: CLK rising
+
+  Data Path: switch_play to d1/Mshreg_sync_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.849   0.420  switch_play_IBUF (switch_play_IBUF)
+     SRL16:D                  -0.064          d1/Mshreg_sync_1
+    ----------------------------------------
+    Total                      1.269ns (0.849ns logic, 0.420ns route)
+                                       (66.9% logic, 33.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              5.531ns (Levels of Logic = 1)
+  Source:            audio_out (FF)
+  Destination:       audio_out (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: audio_out to audio_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.591   0.420  audio_out (audio_out_OBUF)
+     OBUF:I->O                 4.520          audio_out_OBUF (audio_out)
+    ----------------------------------------
+    Total                      5.531ns (5.111ns logic, 0.420ns route)
+                                       (92.4% logic, 7.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.62 secs
+ 
+--> 
+
+
+Total memory usage is 549644 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

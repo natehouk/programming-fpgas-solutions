@@ -1,0 +1,29 @@
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/tone/tone_tester.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/tone/tone_tester.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/tone_elbert.ucf -p xc3s50a-tq144-4 tone_tester.ngc tone_tester.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o tone_tester_map.ncd tone_tester.ngd tone_tester.pcf 
+par -w -intstyle ise -ol high -t 1 tone_tester_map.ncd tone_tester.ncd tone_tester.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml tone_tester.twx tone_tester.ncd -o tone_tester.twr tone_tester.pcf 
+bitgen -intstyle ise -f tone_tester.ut tone_tester.ncd 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/tone/tone_tester.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/tone/tone_tester.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/tone_elbert.ucf -p xc3s50a-tq144-4 tone_tester.ngc tone_tester.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o tone_tester_map.ncd tone_tester.ngd tone_tester.pcf 
+par -w -intstyle ise -ol high -t 1 tone_tester_map.ncd tone_tester.ncd tone_tester.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml tone_tester.twx tone_tester.ncd -o tone_tester.twr tone_tester.pcf 
+bitgen -intstyle ise -f tone_tester.ut tone_tester.ncd 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/tone/tone_tester.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/tone/tone_tester.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/tone_elbert.ucf -p xc3s50a-tq144-4 tone_tester.ngc tone_tester.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o tone_tester_map.ncd tone_tester.ngd tone_tester.pcf 
+par -w -intstyle ise -ol high -t 1 tone_tester_map.ncd tone_tester.ncd tone_tester.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml tone_tester.twx tone_tester.ncd -o tone_tester.twr tone_tester.pcf 
+bitgen -intstyle ise -f tone_tester.ut tone_tester.ncd 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/tone/tone_tester.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/tone/tone_tester.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/tone_elbert.ucf -p xc3s50a-tq144-4 tone_tester.ngc tone_tester.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o tone_tester_map.ncd tone_tester.ngd tone_tester.pcf 
+par -w -intstyle ise -ol high -t 1 tone_tester_map.ncd tone_tester.ncd tone_tester.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml tone_tester.twx tone_tester.ncd -o tone_tester.twr tone_tester.pcf 
+bitgen -intstyle ise -f tone_tester.ut tone_tester.ncd 
+xst -intstyle ise -ifn "/home/natehouk/src/programming-fpgas-solutions/tone/tone_tester.xst" -ofn "/home/natehouk/src/programming-fpgas-solutions/tone/tone_tester.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/tone_elbert.ucf -p xc3s50a-tq144-4 tone_tester.ngc tone_tester.ngd  
+map -intstyle ise -p xc3s50a-tq144-4 -cm area -ir off -pr off -c 100 -o tone_tester_map.ncd tone_tester.ngd tone_tester.pcf 
+par -w -intstyle ise -ol high -t 1 tone_tester_map.ncd tone_tester.ncd tone_tester.pcf 
+bitgen -intstyle ise -f tone_tester.ut tone_tester.ncd 
