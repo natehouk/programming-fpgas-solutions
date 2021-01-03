@@ -1,0 +1,5 @@
+MO alarm NULL src/alarm.v vlg2D/alarm.bin 1609685451
+MO display_7_seg NULL src/display_7_seg.v vlg7E/display__7__seg.bin 1609685451
+MO debouncer NULL src/debouncer.v vlg03/debouncer.bin 1609685451
+MO decoder_7_seg NULL src/decoder_7_seg.v vlg02/decoder__7__seg.bin 1609685451
+MO timer NULL src/timer.v vlg09/timer.bin 1609685451
